@@ -126,6 +126,15 @@ cc_test(
 )
 
 cc_test(
+    name = "dll_test",
+    size = "small",
+    srcs = ["dll_test.cc"],
+    deps = [
+        "@boost//:dll",
+    ],
+)
+
+cc_test(
     name = "dynamic_bitset_test",
     size = "small",
     srcs = ["dynamic_bitset_test.cc"],

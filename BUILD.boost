@@ -645,6 +645,25 @@ boost_library(
 )
 
 boost_library(
+    name = "dll",
+    linkopts = select({
+        ":linux": [
+            "-ldl",
+        ],
+        "//conditions:default": [],
+    }),
+    deps = [
+        ":config",
+        ":core",
+        ":filesystem",
+        ":predef",
+        ":system",
+        ":throw_exception",
+        ":type_traits",
+    ],
+)
+
+boost_library(
     name = "dynamic_bitset",
     deps = [
         ":config",
